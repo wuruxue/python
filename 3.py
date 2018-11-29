@@ -32,8 +32,11 @@ def line_count(dirs_path):
 			line = dp.readline()
 			if not line:
 				break
-			else:
-				code_line += 1
+			if not len(line.strip()):
+				blank_line += 1
+			code_line += 1
+			#print(len(line.strip()))
+	print(blank_line,"lines")
 	print(code_line,"lines")
 
 line_count(dirs_path)
