@@ -1,5 +1,6 @@
 #import chardet
 from chardet import detect
+from os.path import isfile
 count,blanks = 0,0#rb以二进制代码读
 with open("a.txt",'rb') as fp:
 	code = detect(fp.read())['encoding']
@@ -21,3 +22,5 @@ with open("a.txt",'r',encoding=code) as fp:
 		#print(len(line.strip()))
 		count += 1
 print(count,blanks)
+path = r"C:\Users\Administrator\Desktop\root\a.txt"#原生字符串r
+print(isfile(path))#  返回True是文件,否是False,idfile(字符串)
